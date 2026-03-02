@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>EncryptDecrypt - Asymmetric File Exchange</title>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <main class="container">
+      <header class="hero card">
+        <h1>EncryptDecrypt</h1>
+        <p class="subtitle">Secure client-side encryption for text, images, audio, and any files using RSA-OAEP + AES-GCM.</p>
+      </header>
+
+      <section class="card">
+        <h2>1) Key Management</h2>
+        <div class="row">
+          <button id="generateKeys">Generate RSA Key Pair</button>
+          <button id="downloadPublic">Download Public Key</button>
+          <button id="downloadPrivate">Download Private Key</button>
+        </div>
+        <label>Public Key (Base64 SPKI)</label>
+        <textarea id="publicKey" rows="5" placeholder="Paste recipient public key"></textarea>
+        <label>Private Key (Base64 PKCS8)</label>
+        <textarea id="privateKey" rows="5" placeholder="Paste your private key"></textarea>
+      </section>
+
+      <section class="grid">
+        <section class="card">
+          <h2>2) Text Encryption</h2>
+          <label>Plaintext</label>
+          <textarea id="plainText" rows="5" placeholder="Type secret message"></textarea>
+          <button id="encryptText">Encrypt text (.enc.json)</button>
+
+          <label>Encrypted JSON</label>
+          <textarea id="encryptedTextInput" rows="7" placeholder='{"encryptedKey":"..."}'></textarea>
+          <button id="decryptText">Decrypt text</button>
+          <pre id="decryptedTextOutput"></pre>
+        </section>
+
+        <section class="card">
+          <h2>3) File Encryption</h2>
+          <p class="hint">Works for images, audio, and all common binary file formats.</p>
+          <label>File to encrypt</label>
+          <input id="fileToEncrypt" type="file" />
+          <button id="encryptFile">Encrypt file (.enc.json)</button>
+
+          <label>Encrypted .enc.json file</label>
+          <input id="encryptedFileToDecrypt" type="file" accept=".json,application/json" />
+          <button id="decryptFile">Decrypt file</button>
+        </section>
+      </section>
+    </main>
+
+    <div id="statusToast" class="status-toast" aria-live="polite"></div>
+    <script src="./script.js"></script>
+  </body>
+</html>
