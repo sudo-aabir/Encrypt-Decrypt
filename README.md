@@ -8,7 +8,7 @@ A browser-based web app for asymmetric encryption/decryption and secure file exc
 - Everything runs client-side in the browser using Web Crypto API.
 
 ## Usage
-1. Open `index.html` in a modern browser.
+1. Open `index.html` in a good browser.
 2. Generate RSA keys or paste existing base64 keys.
 3. Encrypt/decrypt text.
 4. Encrypt/decrypt files via `.enc.json` payloads.
